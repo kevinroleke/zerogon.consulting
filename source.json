@@ -1,0 +1,35 @@
+{
+    "name": "Zerogon Consulting",
+    "subtitle": "Install my slop, retard.",
+    "description": "Welcome to the slophouse. Here you will find all the iOS apps that I made and had rejected by Apple for not meeting their uptight standards.",
+    "iconURL": "https://zerogon.consulting/logo.png",
+    "headerURL": "https://zerogon.consulting/logo.png",
+    "website": "https://zerogon.consulting",
+    "tintColor": "#000000",
+    "featuredApps": [
+        "com.zerogon.Luck"
+    ],
+    "apps": [
+        {
+            "name": "Luck",
+            "bundleIdentifier": "com.zerogon.Luck",
+            "developerName": "Zerogon Consulting LLC",
+            "subtitle": "The purest form of brainrot.",
+            "localizedDescription": "The purest form of brainrot. Wrongfully rejected by the homosexual technofascists over at Apple.",
+            "iconURL": "https://zerogon.consulting/luck-logo.png",
+            "tintColor": "#ffd707",
+            "screenshots": [],
+            "versions": [
+                {
+                    "version": "3.2.8",
+                    "date": "3129-11-16T07:00:00-08:00",
+                    "size": 48667,
+                    "downloadURL": "https://zerogon.consulting/Luck.ipa",
+                    "localizedDescription": "Initial future release."
+                }
+            ],
+            "appPermissions": {}
+        }
+    ],
+    "news": []
+}
