@@ -1,0 +1,426 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        .bubble-container-container {
+            position: absolute;
+            bottom: 0;
+            margin: 0;
+            padding: 0;
+        }
+        .bubble-container-container pre {
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            line-height: 1;
+            overflow: hidden;
+            margin: 0;
+        }
+        #bubble-container {
+            background: #000;
+            color: #fff;
+        }
+        #white-bubble-container {
+            background: #fff;
+            color: #000;
+            filter: blur(3px);
+        }
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .ying {
+            font-family: "Bodoni Moda", serif;
+            font-optical-sizing: auto;
+            font-weight: bold;
+            font-style: italic;
+            color: black;
+            position: absolute;
+            left: 1em;
+            top: calc(50vh - 2em);
+            font-size: 10em;
+            z-index: 2;
+        }
+        .yang {
+            font-family: "Bodoni Moda", serif;
+            font-optical-sizing: auto;
+            font-weight: bold;
+            font-style: italic;
+            color: white;
+            position: absolute;
+            left: 1em;
+            top: calc(50vh);
+            font-size: 10em;
+            z-index: 2;
+            filter: blur(3px);
+        }
+        ::selection{
+            background-color: #ccc;
+        }
+        .content-container {
+            position: absolute;
+            z-index: 2;
+            right: 10em;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        .content {
+            background-color: white;
+            display: flex;
+        }
+        .cc {
+            background-color: rgba(251, 72, 196, 0.5);
+            padding: 2em;
+            padding-top: 0em;
+            padding-bottom: 1em;
+            font-family: "Space Mono", monospace;
+            font-weight: 400;
+            font-style: normal;
+        }
+        ul {
+            list-style-type: circle;
+            margin-top: 0.5em;
+        }
+        h1 {
+            margin-bottom: 0;
+        }
+        a {
+            text-decoration: underline;
+            color: #54158a;
+            cursor: pointer;
+        }
+        .mobile-heading {
+            font-family: "Bodoni Moda", serif;
+            font-optical-sizing: auto;
+            font-weight: bold;
+            font-style: italic;
+            color: black;
+            font-size: 22vw;
+            margin: 0;
+        }
+        .mobile-cc {
+            padding: 2em;
+            padding-top: 0em;
+            padding-bottom: 1em;
+            font-size: 4vw;
+            font-family: "Space Mono", monospace;
+            font-weight: 400;
+            font-style: normal;
+        }
+        #test {
+            visibility: hidden;
+            position: absolute;
+            z-index: -1;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+        }
+        .blur {
+            filter: blur(2px);
+        }
+        #bubble-toggle {
+            position: absolute;
+            bottom: 0;
+            color: white;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            z-index: 2;
+            font-family: "Space Mono", monospace;
+            font-weight: 400;
+            font-style: italic;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <span class="ying">Zerogon</span>
+    <span class="yang">Zerogon</span>
+    <div class="bubble-container-container">
+        <pre id="white-bubble-container"></pre>
+        <pre id="bubble-container"></pre>
+    </div>
+    <div class="content-container">
+        <div class="content">
+            <div class="cc">
+                <h1>SERVICES</h1>
+                <ul>
+                    <li>Full stack web development</li>
+                    <li>Mobile app development</li>
+                    <li>Cryptocurrency, smart contract development</li>
+                </ul>
+                <h1>WORK</h1>
+                <ul>
+                    <li><a target="_blank" href="https://turtosa.com">Turtosa</a></li>
+                    <li><a target="_blank" href="https://bitswift.cash">Bitswift Explorer</a></li>
+                    <li><a target="_blank" href="https://peerdomains.org">PeerDomains</a></li>
+                    <li><a target="_blank" href="https://hud.zerogon.consulting">PokerNow HUD</a></li>
+                </ul>
+                <h1>CONTACT</h1>
+                <a id="email" class="blur"></a>
+                <a id="unscramble" onclick="scr()">Unscramble</a>
+            </div>
+        </div>
+    </div>
+    <span id="test">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span>
+    <span id="bubble-toggle">KILL THE BUBBLES/SAVE MY CPU</span>
+
+    <script>
+        const unscrambleBtn = document.getElementById('unscramble');
+        const email = atob('a2V2aW5AemVyb2dvbi5jb25zdWx0aW5n');
+        const letters = 'abcdefghijklmnopqrstuvwxyz';
+        let scrambled = '';
+        let scrambleInterval;
+        for (const char of email) {
+            if (['.', '@'].includes(char)) {
+                scrambled += char;
+            } else {
+                scrambled += letters.charAt(Math.floor(Math.random() * letters.length));
+            }
+        }
+        document.getElementById('email').textContent = scrambled;
+        document.getElementById('email').setAttribute('href', `mailto:${scrambled}`);
+        const scramble = () => {
+            document.getElementById('email').classList.add('blur');
+            scrambleInterval = setInterval(() => {
+                console.log(2);
+                for (let i = 0; i < scrambled.length; i++) {
+                    if (scrambled[i] !== email[i] || ['.', '@'].includes(email[i])) continue;
+                    let cco = scrambled.charCodeAt(i);
+                    scrambled = scrambled.split('');
+                    scrambled[i] = letters.charAt(Math.floor(Math.random() * letters.length));
+                    scrambled = scrambled.join('');
+                    document.getElementById('email').textContent = scrambled;
+                    document.getElementById('email').setAttribute('href', `mailto:${scrambled}`);
+                    return;
+                }
+                document.getElementById('unscramble').disabled = false;
+                document.getElementById('unscramble').textContent = 'Unscramble';
+                clearInterval(scrambleInterval);
+            }, 100);
+        }
+        const unscramble = () => {
+            scrambleInterval = setInterval(() => {
+                pass = true;
+                for (let i = 0; i < scrambled.length; i++) {
+                    if (scrambled[i] == email[i]) continue;
+                    let cco = scrambled.charCodeAt(i);
+                    scrambled = scrambled.split('');
+                    scrambled[i] = cco < 122 ? String.fromCharCode(cco + 1) : 'a';
+                    scrambled = scrambled.join('');
+                    document.getElementById('email').textContent = scrambled;
+                    document.getElementById('email').setAttribute('href', `mailto:${scrambled}`);
+                    pass = false;
+                }
+                if (pass) {
+                    document.getElementById('unscramble').disabled = false;
+                    document.getElementById('email').classList.remove('blur');
+                    document.getElementById('unscramble').textContent = 'Scramble';
+                    clearInterval(scrambleInterval);
+                }
+            }, 50);
+        }
+        //unscrambleBtn.addEventListener(window.matchMedia("(pointer: coarse)").matches ? 'touchstart' : 'click', e => {
+        const scr = () => {
+            if (unscrambleBtn.disabled) return;
+            document.getElementById('unscramble').textContent = '...';
+            document.getElementById('unscramble').disabled = true;
+            if (email == scrambled) {
+                scramble();
+            } else {
+                unscramble();
+            }
+        };
+        //}, false);
+
+        var stop = false;
+        const bt = document.querySelector('#bubble-toggle');
+        bt.addEventListener('click', () => {
+            stop = !stop;
+            if (stop) bt.textContent = 'SAVE THE BUBBLES/KILL MY CPU';
+            if (!stop) bt.textContent = 'KILL THE BUBBLES/SAVE MY CPU';
+        });
+
+        class Bubble {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.age = 100;
+                this.maxAge = Math.random() * 200 + 100;
+                this.speed = Math.random() * 0.3 + 0.2;
+                this.horizontalDrift = (Math.random() - 0.5) * 0.1;
+                this.popDuration = 8;
+                this.hasPopped = false;
+                this.popAge = 0;
+            }
+
+            update() {
+                if (!this.hasPopped) {
+                    this.age++;
+                    this.y -= this.speed;
+                    this.x += this.horizontalDrift;
+
+                    // Start popping when reaching max age or top
+                    if (this.age > this.maxAge || this.y < -5) {
+                        this.hasPopped = true;
+                    }
+                } else {
+                    this.popAge++;
+                }
+            }
+
+            getSize() {
+                if (this.hasPopped) return 'pop';
+                const ageRatio = this.age / this.maxAge;
+                if (ageRatio < 0.3) return 'small';
+                if (ageRatio < 0.6) return 'medium';
+                if (ageRatio < 0.9) return 'large';
+                return 'xlarge';
+            }
+
+            getPattern() {
+                const patterns = {
+                    small: ['o'],
+                    medium: [
+                        ' .--.',
+                        '(    )',
+                        ' \'--\''
+                    ],
+                    large: [
+                        '  .----.',
+                        ' /      \\',
+                        '(        )',
+                        ' \\      /',
+                        '  \'----\''
+                    ],
+                    xlarge: [
+                        '   .------.',
+                        '  /        \\',
+                        ' (          )',
+                        '(            )',
+                        ' (          )',
+                        '  \\        /',
+                        '   \'------\''
+                    ],
+                    pop: this.getPopPattern()
+                };
+                return patterns[this.getSize()];
+            }
+
+            getPopPattern() {
+                const popFrames = [
+                    ['* POP! *'],
+                    ['  ***  ', ' * * * ', '  ***  '],
+                    ['   *   ', '  * *  ', ' *   * ', '  * *  ', '   *   '],
+                    [' *   * ', '   *   ', '*     *', '   *   ', ' *   * '],
+                    ['*     *', '       ', '       ', '       ', '*     *'],
+                    []
+                ];
+                const frameIndex = Math.min(this.popAge, popFrames.length - 1);
+                return popFrames[frameIndex];
+            }
+
+            shouldRemove() {
+                return this.hasPopped && this.popAge > this.popDuration;
+            }
+
+            getWidth() {
+                const pattern = this.getPattern();
+                return pattern.length > 0 ? Math.max(...pattern.map(line => line.length)) : 0;
+            }
+
+            getHeight() {
+                return this.getPattern().length;
+            }
+        }
+
+        class BubbleAnimation {
+            constructor(width = 300, height = 75) {
+                this.width = Math.ceil(window.innerWidth / (document.getElementById('test').offsetWidth/10000));
+                this.height = Math.ceil(window.innerHeight / (document.getElementById('test').clientHeight))+11;
+                this.bubbles = [];
+                this.containerWhite = document.getElementById('white-bubble-container');
+                this.containerBlack = document.getElementById('bubble-container');
+            }
+
+            spawnBubble() {
+                if (Math.random() < 0.05) {
+                    const x = Math.random() * (this.width - 10) + 2;
+                    this.bubbles.push(new Bubble(x, this.height + 2));
+                }
+            }
+
+            update() {
+                this.spawnBubble();
+
+                this.bubbles.forEach(bubble => bubble.update());
+                this.bubbles = this.bubbles.filter(bubble => !bubble.shouldRemove());
+            }
+
+            render() {
+                // Create empty screen grid
+                const screen = Array(this.height + 5).fill(null).map(() =>
+                    Array(this.width).fill(' ')
+                );
+
+                // Draw all bubbles
+                this.bubbles.forEach(bubble => {
+                    const pattern = bubble.getPattern();
+                    const startX = Math.floor(bubble.x);
+                    const startY = Math.floor(bubble.y);
+
+                    pattern.forEach((line, dy) => {
+                        const y = startY + dy;
+                        if (y >= 0 && y < screen.length) {
+                            for (let dx = 0; dx < line.length; dx++) {
+                                const x = startX + dx;
+                                if (x >= 0 && x < this.width && line[dx] !== ' ') {
+                                    screen[y][x] = line[dx];
+                                }
+                            }
+                        }
+                    });
+                });
+
+                // Convert screen to string and display
+                const lines = screen.map(row => row.join(''));
+                const outputWhite = lines.slice(0, Math.ceil(lines.length / 2)).join('\n');
+                const outputBlack = lines.slice(Math.ceil(lines.length / 2)).join('\n');
+                this.containerWhite.textContent = outputWhite;
+                this.containerBlack.textContent = outputBlack;
+            }
+
+            start() {
+                var fpsInterval, now, then, elapsed;
+                fpsInterval = 1000 / 16;
+                then = Date.now();
+
+                const animate = () => {
+                    requestAnimationFrame(animate);
+                    if (stop) return;
+                    now = Date.now();
+                    elapsed = now - then;
+
+                    if (elapsed > fpsInterval) {
+                        then = now - (elapsed % fpsInterval);
+                        this.update();
+                        this.render();
+                    }
+                };
+                animate();
+            }
+        }
+
+        if (window.matchMedia("(pointer: coarse)").matches) {
+            document.body.innerHTML = `<h2 class="mobile-heading">Zerogon</h2><div class="mobile-cc">${document.querySelector('.cc').innerHTML}</div>`;
+        } else {
+            const animation = new BubbleAnimation();
+            animation.start();
+        }
+    </script>
+</body>
+</html>
